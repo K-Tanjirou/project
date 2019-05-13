@@ -1,0 +1,51 @@
+/* pages/author_page/author_page.wxss */
+
+
+.team_pic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top_pic{
+  width: 200px;
+  height: 200px;
+}
+
+.contain{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  border-top:1px rgba(0, 0, 0, 0.74) solid;
+}
+
+.card{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-bottom: 1px rgba(0, 0, 0, 0.466) solid
+}
+
+.name_num{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.introduction{
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.493);
+}
+
+.pic{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.name{
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+
+.num{
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.493);
+}

@@ -1,0 +1,7 @@
+<view class='container'>
+  <text class="title">{{paper.lwTitle}}</text>
+  <text class='data'>日期：{{paper.lwDate}}</text>
+  <text class="author">作者：{{paper.lwAuthor}}</text>
+  <text class="body">{{paper.lwContent}}</text>
+  <button class="cu-btn round bg-blue" id="button">下载</button>
+</view>

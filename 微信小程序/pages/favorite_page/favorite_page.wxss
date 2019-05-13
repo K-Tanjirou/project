@@ -1,0 +1,42 @@
+/* pages/favorite_page/favorite_page.wxss */
+.item-container{
+  margin: 10rpx;
+  padding: 20rpx;
+  border: 1px rgba(0, 0, 0, 0.74) solid;
+  border-radius:10px;
+  background-color: rgba(243, 202, 155, 0.582)
+}
+
+.item-title_score{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.item-title{
+  margin-right: 40rpx;
+}
+
+.item-score{
+  color: rgba(1, 161, 140, 0.932);
+}
+
+.item-year{
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.5)
+}
+
+.item-author{
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.5)
+}
+
+.text_position{
+  margin-left: 15rpx;
+}
+
+.icon{
+  width: 33rpx;
+  height: 33rpx;
+}

@@ -1,0 +1,24 @@
+<!--pages/favorite_page/favorite_page.wxml-->
+
+<block wx:for = "{{showrecordList}}" wx:key = "item">
+  <view bindtap='detail' 
+        class='item-container'
+        data-id='{{item.lwid}}'>
+
+    <view class='item-title_score'>
+      <p class="item-title">{{item.lwTitle}}</p>
+      <p class="item-score">{{item.lwid}}</p>
+    </view>
+
+    <view class='item-year'>
+      <image class='icon' src='/pages/img/android-clock.png '></image>
+      <p class='text_position'>{{item.createdTime}}</p>
+    </view>
+
+    <view class='item-author'>
+      <image class='icon' src='/pages/img/ios7-people-outline.png '></image>
+      <p class='text_position'>{{item.lwAuthor}}</p>
+    </view>
+
+  </view>
+</block>

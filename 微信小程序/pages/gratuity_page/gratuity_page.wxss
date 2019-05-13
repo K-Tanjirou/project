@@ -1,0 +1,10 @@
+/* pages/gratuity_page/gratuity_page.wxss */
+.img_gather{
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.text_content{
+  text-align: center;
+  color: rgba(60, 199, 32, 0.856)
+}

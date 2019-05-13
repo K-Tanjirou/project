@@ -1,0 +1,24 @@
+<!--pages/downloadpage/download_record.wxml-->
+<view>
+
+  <view class='main'>
+    <block wx:for="{{showrecordList}}" wx:key="item">
+      <view class='container'
+      bindtap='detail'
+      data-id='{{item.id}}'
+      >
+        <view class='item-list'>
+          <p class='time'>{{item.downDate}}</p>
+          <p class='title'>{{item.title}}</p>
+        </view>
+        <view bindtap='delete'>
+          <image class='del-img' src='/pages/img/删除.png '></image>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='button_style'>
+    <button class='clean'>清空记录</button>
+  </view>
+
+</view>

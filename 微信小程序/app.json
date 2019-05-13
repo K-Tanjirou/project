@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/Myselfpage/myself",
+    "pages/author_page/author_page",
+    "pages/favorite_page/favorite_page",
+    "pages/gratuity_page/gratuity_page",
+    "pages/history_page/history_page",
+    "pages/downloadpage/download_record",
+    "pages/My_details/my_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1E90FF",
+    "navigationBarTitleText": "搜搜论文",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/img/首页.png",
+        "selectedIconPath": "pages/img/首页_selected.png"
+      },
+      {
+        "pagePath": "pages/Myselfpage/myself",
+        "text": "我的",
+        "iconPath": "pages/img/我的.png",
+        "selectedIconPath": "pages/img/我的_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
