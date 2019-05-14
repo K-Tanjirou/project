@@ -3,15 +3,17 @@
 
   <view class='main'>
     <block wx:for="{{showrecordList}}" wx:key="item">
-      <view class='container'
-      bindtap='detail'
-      data-id='{{item.id}}'
-      >
-        <view class='item-list'>
+      <view class='container'>
+
+        <view class='item-list'
+        bindtap='detail'
+        data-lwid='{{item.lwid}}'
+        data-yhid='{{item.yhid}}'>
           <p class='time'>{{item.downDate}}</p>
           <p class='title'>{{item.title}}</p>
         </view>
-        <view bindtap='delete'>
+        <view bindtap='delete_paper'
+        data-lwid='{{item.lwid}}'>
           <image class='del-img' src='/pages/img/删除.png '></image>
         </view>
       </view>

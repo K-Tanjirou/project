@@ -8,6 +8,7 @@ Page({
    */
   data: {
     yhid:1,//用户id
+    lwid:"",//论文id
     collection:"../img/star.png",//收藏五星图片
     collectionSelected: "../img/star-selected.png",//收藏五星图片
     num:0,//保存返回了多少篇文章
@@ -114,7 +115,7 @@ Page({
   getList: function (event) {//暂时先保存相应的关键字
     var THIS = this
     var str = THIS.data.str
-    var yhid = THIS.data.yhid
+    var yhid = 1
     var input = this.data.str;//input就是用户输入的关键字
     
     wx.request({//搜索发送用户id和关键词
@@ -146,6 +147,9 @@ Page({
     var current_date = util.formatgetDate(new Date());//获取当前日期***
     var current_time = util.formatgetTime(new Date());//获取当前时间***
     var title = event.currentTarget.dataset.title;//获取标题***
+    var current_time = util.formatgetTime(new Date());//获取当前时间***
+    var title = event.currentTarget.dataset.title;//获取标题***
+    var file = event.currentTarget.dataset.file;//获取论文名***
     //var lwContent = event.currentTarget.dataset.title;//获取内容***
     wx.request({
       url: "http://111.230.49.54:8080/paper/history",
@@ -170,12 +174,14 @@ Page({
         console.log(res.data);
       }
     })
-    //传递论文日期，作者，内容，跳转到detail页面
+    //传递论文id，论文日期，作者，内容，跳转到detail页面
+    var lwid = event.currentTarget.dataset.lwid;
     var date = event.currentTarget.dataset.date;
     var author = event.currentTarget.dataset.author;
     var lwContent = event.currentTarget.dataset.lwContent;
+    var file = event.currentTarget.dataset.file;
     wx.navigateTo({
-      url: '/pages/detail/detail?title=' + title + '&date=' + date + '&author=' + author + '&lwContent=' + lwContent,//传递参数用&做分隔符     
+      url: '/pages/detail/detail?lwid='+lwid+'&title=' + title + '&date=' + date + '&author=' + author + '&lwContent=' + lwContent+'&file=' + file,//传递参数用&做分隔符     
     })
   },
   ToColletcion:function(event){//每次点击时，改变它的收藏状态

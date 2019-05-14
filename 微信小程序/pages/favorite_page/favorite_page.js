@@ -1,5 +1,3 @@
-// pages/favorite_page/favorite_page.js
-//读取douban.js文件数据,这个require后面的参数是入口文件的文件路径，但是注意必须是相对路径，不能绝对路径
 
 Page({
 
@@ -84,9 +82,29 @@ Page({
    * 用户点击card进入内容页面
    */
   detail: function (event) {
-    var id = event.currentTarget.dataset.id;
+    var lwid = event.currentTarget.dataset.lwid;
     wx.navigateTo({
-      url: '/pages/My_details/my_detail?id=' + id
+      url: '/pages/My_details/my_detail?id=' + lwid
+    })
+  },
+  /**
+   * 删除
+   */
+  delete_paper: function (event) {
+    console.log("----------------------------------------------------")
+    var lwid = event.currentTarget.dataset.lwid;
+    var yhid = event.currentTarget.dataset.yhid;
+    var that = this;
+    wx.request({
+      url: 'http://111.230.49.54:8080/paper/collection/del/1',
+      method: 'DELETE',
+      success: function (res) {
+        console.log(that.data.showrecordList);
+        that.onLoad();
+      },
+      fail: function (err) {
+        console.log(err)
+      },
     })
   }
 })

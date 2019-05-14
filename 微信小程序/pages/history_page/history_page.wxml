@@ -1,13 +1,17 @@
 <!--pages/history_page/history_page.wxml-->
 <block wx:for="{{showrecordList}}" wx:key="item">
-  <view class='container' 
-  bindtap='detail'
-  data-id='{{item.id}}'>
+  <view class='container'>
 
-    <view class='item-list'>
+    <view class='item-list'
+    bindtap='detail'
+    data-lwid='{{item.lwid}}'>
       <text class='time'>{{item.browDate}}</text>
       <text class='title'>{{item.title}}</text>
     </view>
     
+    <view bindtap='delete_paper'
+        data-lwid='{{item.lwid}}'>
+      <image class='del-img' src='/pages/img/删除.png '></image>
+    </view>
   </view>
 </block>

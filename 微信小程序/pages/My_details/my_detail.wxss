@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
+  margin-bottom: 60rpx;
 }
 .title{
   font-size:60rpx;

@@ -9,50 +9,50 @@ App({
 
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        var that = this;
-        var code = res.code; //登录凭证
-        if (code) {
-          //2、调用获取用户信息接口
-          wx.getUserInfo({
-            success: function (res) {
-              //3.请求自己的服务器，解密用户信息 获取unionId等加密信息
-              wx.request({
-                url: 'http://111.230.49.54:8080/paper/user/decode', //自己的服务接口地址
-                method: 'post',
-                data: {
-                  code: code,
-                  username: res.userInfo.nickName,
-                },
-                success: function (data) {
-                  //4.解密成功后 获取自己服务器返回的结果
-                  console.log(data.data.data)
-                  if (data.data.code == 20000) {
-                    that.globalData.userId = data.data.data
-                    if (that.employIdCallback) {
-                      that.employIdCallback(data.data.data);
-                    }
-                  } else {
-                    console.log('登录失败')
-                  }
-                },
-                fail: function () {
-                  console.log('系统错误')
-                }
-              })
-            },
-            fail: function () {
-              console.log('获取用户信息失败')
-            }
-          })
-        } else {
-          console.log('获取用户登录态失败！' + r.errMsg)
-        }
-      },
-      fail: function () {
-        console.log('登陆失败')
-      }
+      // success: res => {
+      //   // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      //   var that = this;
+      //   var code = res.code; //登录凭证
+      //   if (code) {
+      //     //2、调用获取用户信息接口
+      //     wx.getUserInfo({
+      //       success: function (res) {
+      //         //3.请求自己的服务器，解密用户信息 获取unionId等加密信息
+      //         wx.request({
+      //           url: 'http://111.230.49.54:8080/paper/user/decode', //自己的服务接口地址
+      //           method: 'post',
+      //           data: {
+      //             code: code,
+      //             username: res.userInfo.nickName,
+      //           },
+      //           success: function (data) {
+      //             //4.解密成功后 获取自己服务器返回的结果
+      //             console.log(data.data.data)
+      //             if (data.data.code == 20000) {
+      //               that.globalData.userId = data.data.data
+      //               if (that.employIdCallback) {
+      //                 that.employIdCallback(data.data.data);
+      //               }
+      //             } else {
+      //               console.log('登录失败')
+      //             }
+      //           },
+      //           fail: function () {
+      //             console.log('系统错误')
+      //           }
+      //         })
+      //       },
+      //       fail: function () {
+      //         console.log('获取用户信息失败')
+      //       }
+      //     })
+      //   } else {
+      //     console.log('获取用户登录态失败！' + r.errMsg)
+      //   }
+      // },
+      // fail: function () {
+      //   console.log('登陆失败')
+      // }
 
     })
     // 获取用户信息

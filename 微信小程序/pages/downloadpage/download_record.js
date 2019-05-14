@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    lwid:" ",
+    showrecordList:[]
   },
 
   /**
@@ -81,10 +82,34 @@ Page({
    * 点击列表页跳转相应的详情页
    */
   detail: function (event) {
-    var id = event.currentTarget.dataset.id;
+    var lwid = event.currentTarget.dataset.lwid;
     wx.navigateTo({
-      url: '/pages/My_details/my_detail?id=' + id
+      url: '/pages/My_details/my_detail?id=' + lwid
+    })
+  },
+
+  /**
+   * 删除
+   */
+  delete_paper: function(event){
+    console.log("----------------------------------------------------")
+    var lwid = event.currentTarget.dataset.lwid;
+    var yhid = event.currentTarget.dataset.yhid;
+    var that = this;
+    wx.request({
+      url: 'http://111.230.49.54:8080/paper/downLoad/del',
+      method: 'POST',
+      data:{
+        "lwid":lwid,
+        "yhid":yhid
+      },
+      success: function (res) {
+        console.log(that.data.showrecordList);
+        that.onLoad();
+      },
+      fail: function (err) {
+        console.log(err)
+      },
     })
   }
-  
 })

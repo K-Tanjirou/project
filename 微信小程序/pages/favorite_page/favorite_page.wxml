@@ -3,11 +3,15 @@
 <block wx:for = "{{showrecordList}}" wx:key = "item">
   <view bindtap='detail' 
         class='item-container'
-        data-id='{{item.lwid}}'>
+        data-lwid='{{item.lwid}}'>
 
     <view class='item-title_score'>
       <p class="item-title">{{item.lwTitle}}</p>
-      <p class="item-score">{{item.lwid}}</p>
+      <p class="item-score" 
+        catchtap='delete_paper'
+        data-lwid='{{item.lwid}}'>
+        <image class='del-img' src='/pages/img/删除.png '></image>
+      </p>
     </view>
 
     <view class='item-year'>
