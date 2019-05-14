@@ -112,6 +112,7 @@ Page({
             console.log('打开文档成功')
           }
         })
+        console.log("wocao sb " + lwid + ":" + current_date + " " + current_time + ":" + title);
         wx.request({
           url: "http://111.230.49.54:8080/paper/downLoad/history",
           method: "POST",

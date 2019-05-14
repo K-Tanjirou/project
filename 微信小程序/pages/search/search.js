@@ -8,7 +8,7 @@ Page({
    */
   data: {
     yhid:1,//用户id
-    lwid:"",//论文id
+    lwid:0,//论文id
     collection:"../img/star.png",//收藏五星图片
     collectionSelected: "../img/star-selected.png",//收藏五星图片
     num:0,//保存返回了多少篇文章
@@ -147,8 +147,6 @@ Page({
     var current_date = util.formatgetDate(new Date());//获取当前日期***
     var current_time = util.formatgetTime(new Date());//获取当前时间***
     var title = event.currentTarget.dataset.title;//获取标题***
-    var current_time = util.formatgetTime(new Date());//获取当前时间***
-    var title = event.currentTarget.dataset.title;//获取标题***
     var file = event.currentTarget.dataset.file;//获取论文名***
     //var lwContent = event.currentTarget.dataset.title;//获取内容***
     wx.request({
@@ -193,7 +191,7 @@ Page({
       THIS.setData({
         [str]:0
       })
-      //向服务端发送用户id，论文id，当前日期时间，论文标题，内容，取消收藏
+      //向服务端发送用户id，论文id，当前日期时间，论文标题，取消收藏
       var lwid = event.currentTarget.dataset.lwid;//论文id
       wx.request({
         url: "http://111.230.49.54:8080/paper/collection/del",
@@ -218,6 +216,7 @@ Page({
         var lwid = event.currentTarget.dataset.lwid;//论文id
         var title = event.currentTarget.dataset.title;//获取标题***
         var author = event.currentTarget.dataset.author;//获取作者
+        var current_date = util.formatgetDate(new Date());//获取当前日期***
         wx.request({
           url: "http://111.230.49.54:8080/paper/collection",
           method: "POST",
