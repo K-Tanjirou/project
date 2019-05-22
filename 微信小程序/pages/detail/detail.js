@@ -24,7 +24,8 @@ Page({
       date: options.date,
       author: options.author,
       lwContent: options.lwContent,
-      file:options.file
+      file:options.file,
+      net:options.net
     })
   },
 
@@ -89,6 +90,7 @@ Page({
     var current_time = util.formatgetTime(new Date());//获取当前时间***
     var title = this.data.title;//论文标题
     var file = this.data.file;//论文名
+    var net = this.data.net;//net
     this.setData({
       loadingHidden: false
     })
@@ -98,7 +100,7 @@ Page({
         'Content-Type': 'application/x-msdownload'
       },
       //下载地址***
-      url: 'http://111.230.49.54:8080/paper/file/'+lwid+'/'+file,
+      url: net,
       success: function (res) {
         var filePath = res.tempFilePath;
         console.log(filePath);
@@ -112,8 +114,9 @@ Page({
             console.log('打开文档成功')
           }
         })
-        console.log("wocao sb " + lwid + ":" + current_date + " " + current_time + ":" + title);
+       // console.log("发送下载记录的东东" + lwid + ":" + current_date + " " + current_time + ":" + title);
         wx.request({
+          //发送用户id，论文id，下载时间，论文标题，作为下载记录
           url: "http://111.230.49.54:8080/paper/downLoad/history",
           method: "POST",
           data: {

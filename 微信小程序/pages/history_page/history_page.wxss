@@ -1,4 +1,5 @@
 /* pages/history_page/history_page.wxss */
+
 .data{
   margin: 15rpx;
   color: rgba(15, 1, 41, 0.507);
@@ -29,3 +30,16 @@
   width: 40rpx;
   height: 40rpx;
 }
+
+.button_style{
+  position: fixed;
+  margin-top: 50rpx;
+  width: 100%
+}
+
+.spe_date{
+  margin: 20rpx;
+  font-size: 30rpx;
+  color: rgba(52, 7, 110, 0.911)
+}
+

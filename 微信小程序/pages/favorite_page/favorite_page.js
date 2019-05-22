@@ -96,8 +96,12 @@ Page({
     var yhid = event.currentTarget.dataset.yhid;
     var that = this;
     wx.request({
-      url: 'http://111.230.49.54:8080/paper/collection/del/1',
-      method: 'DELETE',
+      url: 'http://111.230.49.54:8080/paper/collection/del',
+      method: 'POST',
+      data:{
+        "lwid":lwid,
+        "yhid":yhid
+      },
       success: function (res) {
         console.log(that.data.showrecordList);
         that.onLoad();

@@ -38,11 +38,17 @@
   justify-content: center;
 }
 .article-title{
-  height: 40rpx;
+  height: 45rpx;
   color: blue;
   font-size: 15px;
   width:650rpx;
   text-decoration: underline;
+  -webkit-line-clamp:1;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .article-head{
   height: 150rpx;
@@ -50,12 +56,10 @@
   width: 700rpx;      
   -webkit-line-clamp:3;
   overflow: hidden;
-
-
   color: #4d4d4d;
   margin-left: 24rpx;
   margin-right: 24rpx;
-  margin-top: 12rpx;
+  margin-top: 0rpx;
   margin-bottom: 12rpx;
   line-height: 52rpx;
   word-break: break-all;

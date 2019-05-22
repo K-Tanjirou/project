@@ -1,17 +1,33 @@
 <!--pages/history_page/history_page.wxml-->
-<block wx:for="{{showrecordList}}" wx:key="item">
-  <view class='container'>
+<scroll-view scroll-y="true" style="height:600px;" class='main'>
 
-    <view class='item-list'
-    bindtap='detail'
-    data-lwid='{{item.lwid}}'>
-      <text class='time'>{{item.browDate}}</text>
-      <text class='title'>{{item.title}}</text>
+  <block wx:for="{{historylist}}" wx:key="unique">
+
+    <view class='spe_date'>
+      <text>{{item.resdate}}</text>
     </view>
-    
-    <view bindtap='delete_paper'
+
+    <block wx:for="{{item.historyrecord}}" wx:key="item">
+      <view class='container'>
+
+        <view class='item-list'
+        bindtap='detail'
         data-lwid='{{item.lwid}}'>
-      <image class='del-img' src='/pages/img/删除.png '></image>
-    </view>
-  </view>
-</block>
+          <text class='time'>{{item.time}}</text>
+          <text class='title'>{{item.title}}</text>
+        </view>
+        
+        <view bindtap='delete_paper'
+            data-lwid='{{item.lwid}}'
+            data-id='{{item.id}}'>
+          <image class='del-img' src='/pages/img/delete.png '></image>
+        </view>
+
+      </view>
+    </block>
+  </block>
+</scroll-view>
+
+<view class='button_style'>
+    <button class='clean' bindtap='clean'>清空记录</button>
+</view>

@@ -20,7 +20,7 @@
 .time{
   font-size: 27rpx;
   margin-left: 15rpx;
-  color: rgba(152, 170, 82, 0.733)
+  color: rgba(102, 107, 83, 0.733)
 }
 
 .title{
@@ -35,7 +35,12 @@
 
 .button_style{
   position: fixed;
-  bottom: 30rpx;
+  margin-top: 50rpx;
   width: 100%
 }
 
+.spe_date{
+  margin: 20rpx;
+  font-size: 30rpx;
+  color: rgba(52, 7, 110, 0.911)
+}

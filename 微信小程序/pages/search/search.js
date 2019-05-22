@@ -124,6 +124,11 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
+        //发关键字给后台（已删除）
+        //wx.request({
+        //  url: "http://111.230.49.54:8080/paper/paper/downLoad/"+str,
+        //  method: "GET",
+        //});
         var data = res.data.data;
         THIS.setData({
           list: data,
@@ -148,7 +153,10 @@ Page({
     var current_time = util.formatgetTime(new Date());//获取当前时间***
     var title = event.currentTarget.dataset.title;//获取标题***
     var file = event.currentTarget.dataset.file;//获取论文名***
+    var net = event.currentTarget.dataset.net;//获取net
     //var lwContent = event.currentTarget.dataset.title;//获取内容***
+    //发送用户id，论文id，点击时间，标题给后台当做历史记录
+    //console.log("发送历史记录的东东"+lwid + ":" + current_date + " " + current_time+":"+title);
     wx.request({
       url: "http://111.230.49.54:8080/paper/history",
       method: "POST",
@@ -157,7 +165,6 @@ Page({
         "lwid": lwid,//论文id
         "browDate": current_date + " " + current_time,
         "title": title
-        //还有个lwContent
       },
       header: {
         'Content-Type': 'application/json'
@@ -178,8 +185,9 @@ Page({
     var author = event.currentTarget.dataset.author;
     var lwContent = event.currentTarget.dataset.lwContent;
     var file = event.currentTarget.dataset.file;
+    var net = event.currentTarget.dataset.net;
     wx.navigateTo({
-      url: '/pages/detail/detail?lwid='+lwid+'&title=' + title + '&date=' + date + '&author=' + author + '&lwContent=' + lwContent+'&file=' + file,//传递参数用&做分隔符     
+      url: '/pages/detail/detail?lwid='+lwid+'&title=' + title + '&date=' + date + '&author=' + author + '&lwContent=' + lwContent+'&file=' + file + '&net=' + net,//传递参数用&做分隔符     
     })
   },
   ToColletcion:function(event){//每次点击时，改变它的收藏状态
@@ -191,8 +199,9 @@ Page({
       THIS.setData({
         [str]:0
       })
-      //向服务端发送用户id，论文id，当前日期时间，论文标题，取消收藏
+      //向服务端发送用户id，论文id，当做收藏夹
       var lwid = event.currentTarget.dataset.lwid;//论文id
+      //console.log("发送取消收藏的东东："+lwid);
       wx.request({
         url: "http://111.230.49.54:8080/paper/collection/del",
         method: "POST",
@@ -212,11 +221,13 @@ Page({
       THIS.setData({
         [str]:1
       })
-      //向服务端发送用户id，论文id，当前日期时间，论文标题，内容，收藏
+      //向服务端发送用户id，论文id，论文标题，论文作者，当前时间，当做收藏夹
         var lwid = event.currentTarget.dataset.lwid;//论文id
         var title = event.currentTarget.dataset.title;//获取标题***
         var author = event.currentTarget.dataset.author;//获取作者
         var current_date = util.formatgetDate(new Date());//获取当前日期***
+        var current_time = util.formatgetTime(new Date());//获取当前时间***
+      //console.log("发送收藏的东东：" + lwid + ":" + title + ":" + author + ":" + current_date + " " + current_time);
         wx.request({
           url: "http://111.230.49.54:8080/paper/collection",
           method: "POST",
@@ -225,6 +236,7 @@ Page({
             "lwid": lwid,//论文id
             "lwTitle": title,//论文标题
             "lwAuthor": author,//论文作者
+            "createdTime": current_date + " " + current_time,//当前日期
           },
           header: {
             'Content-Type': 'application/json'

@@ -9,8 +9,9 @@
       <p class="item-title">{{item.lwTitle}}</p>
       <p class="item-score" 
         catchtap='delete_paper'
-        data-lwid='{{item.lwid}}'>
-        <image class='del-img' src='/pages/img/删除.png '></image>
+        data-lwid='{{item.lwid}}'
+        data-yhid='{{item.yhid}}'>
+        <image class='del-img' src='/pages/img/delete.png '></image>
       </p>
     </view>
 
