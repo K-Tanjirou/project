@@ -1,0 +1,79 @@
+.inputItem{
+  height: 120rpx;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+
+.left{
+  width: 100rpx;
+  height:2rem;
+}
+.TextInput{
+  background-color:#DCDCDC;
+  width: 500rpx;
+  height:2rem;
+  min-height: 2rem;
+}
+.right{
+  width: 70rpx;
+  height:2rem;
+}
+#returnArticle-Button{
+  background-color: rgba(128, 128, 128, 0.274);
+  height: 50rpx;
+}
+.articleList{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+  margin-top: 50rpx;
+}
+.article{
+  height:250rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.article-title{
+  height: 45rpx;
+  color: blue;
+  font-size: 15px;
+  width:650rpx;
+  text-decoration: underline;
+  -webkit-line-clamp:1;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.article-head{
+  height: 150rpx;
+  font-size: 10px;
+  width: 700rpx;      
+  -webkit-line-clamp:3;
+  overflow: hidden;
+  color: #4d4d4d;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  margin-top: 0rpx;
+  margin-bottom: 12rpx;
+  line-height: 52rpx;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.article-time{
+  height: 40rpx;
+  font-size: 10px;
+  width:300rpx;
+}
+.article-author{
+  height: 40rpx;
+  font-size: 10px;
+  width:300rpx;
+}

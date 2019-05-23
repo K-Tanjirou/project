@@ -1,0 +1,34 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+}
+.title{
+  font-size:60rpx;
+  font-weight: bold;
+  width:750rpx;
+  text-align: center;
+  margin:50rpx;
+}
+.lwContent{
+  font-size: 40rpx;
+  width: 700rpx;
+  margin-top: 50rpx;
+}
+.date{
+  font-size: 30rpx;
+  color: gray;
+  width: 300rpx;
+}
+.author{
+  font-size:30rpx;
+  color: gray;
+  width: 300rpx;
+}
+#button{
+  width:160rpx;
+  height: 90rpx;
+  margin-top: 60rpx;
+}

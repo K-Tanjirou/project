@@ -1,0 +1,32 @@
+
+.search{
+  height: 500rpx;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+}
+.Text{
+  font-size:60rpx;
+}
+.inputItem{
+  width:600rpx;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+.left{
+  width: 100rpx;
+  height:2rem;
+}
+.TextInput{
+  background-color:#DCDCDC;
+  width: 400rpx;
+  height:2rem;
+  min-height: 2rem;
+}
+.right{
+  width: 70rpx;
+  height:2rem;
+}

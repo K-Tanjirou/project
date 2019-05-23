@@ -1,0 +1,72 @@
+<!--pages/Myselfpage/myself.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+
+<view class='about_page'>
+
+  <text class='about_text'>{{about_text}}</text>
+  <div class="weui-cells">
+
+    <div class="weui-cell weui-cell_access" bindtap="history_information">
+      <div class="weui-cell__hd"><image class='title_img' src="/pages/img/history.png"/></div>
+      <div class="weui-cell__bd">
+        <p class="title_text">历史记录</p>
+      </div>
+      <div class="weui-cell__ft">
+        <image class='title_img' src='/pages/img/arrow.png'/>
+      </div>
+    </div>
+
+    <div class="weui-cell weui-cell_access" bindtap="download_record">
+      <div class="weui-cell__hd"><image class='title_img' src="/pages/img/download.png"/></div>
+      <div class="weui-cell__bd">
+        <p class="title_text">下载记录</p>
+      </div>
+      <div class="weui-cell__ft">
+        <image class='title_img' src='/pages/img/arrow.png'/>
+      </div>
+    </div>
+
+    <div class="weui-cell weui-cell_access" bindtap="favorite_information">
+      <div class="weui-cell__hd"><image class='title_img' src="/pages/img/collection.png"/></div>
+      <div class="weui-cell__bd">
+        <p class="title_text">收藏夹</p>
+      </div>
+      <div class="weui-cell__ft">
+        <image class='title_img' src='/pages/img/arrow.png'/>
+      </div>
+    </div>
+  
+    <div class="weui-cell weui-cell_access" bindtap="author_information">  
+      <div class="weui-cell__hd"><image class='title_img' src="/pages/img/about_author.png"/></div>
+        <div class="weui-cell__bd">
+          <p class="title_text">关于作者</p>
+        </div>
+        <div class="weui-cell__ft">
+          <image class='title_img' src='/pages/img/arrow.png'/>
+        </div>
+    </div>
+
+    <div class="weui-cell weui-cell_access" bindtap="gratuity_information">  
+      <div class="weui-cell__hd"><image class='title_img' src="/pages/img/payment.png"/></div>
+        <div class="weui-cell__bd">
+          <p class="title_text">打赏</p>
+        </div>
+        <div class="weui-cell__ft">
+          <image class='title_img' src='/pages/img/arrow.png'/>
+        </div>
+    </div>
+
+  </div>
+
+</view>
+
+
+

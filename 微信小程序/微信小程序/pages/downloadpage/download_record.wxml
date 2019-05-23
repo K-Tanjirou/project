@@ -1,0 +1,35 @@
+<!--pages/downloadpage/download_record.wxml-->
+<view>
+
+  <scroll-view scroll-y="true" style="height:600px;" class='main'>
+    <block wx:for="{{downlist}}" wx:key="unique">
+
+      <view class='spe_date'>
+        <text>{{item.resdate}}</text>
+      </view>
+      <block wx:for="{{item.downrecord}}" wx:key="item">
+          <view class='container'>
+            <view class='item-list'
+            bindtap='detail'
+            data-id='{{item.id}}'
+            data-lwid='{{item.lwid}}'
+            data-yhid='{{item.yhid}}'>
+              <p class='time'>{{item.time}}</p>
+              <p class='title'>{{item.title}}</p>
+            </view>
+
+            <view bindtap='delete_paper'
+            data-id='{{item.id}}'
+            data-lwid='{{item.lwid}}'>
+              <image class='del-img' src='/pages/img/delete.png '></image>
+            </view>
+          </view>
+        </block>
+      </block>
+  </scroll-view>
+
+  <view class='button_style'>
+    <button class='clean' bindtap='clean'>清空记录</button>
+  </view>
+
+</view>
