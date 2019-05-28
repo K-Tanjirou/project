@@ -1,0 +1,48 @@
+ <!--搜索-->
+ <view class="inputItem">
+    <image src="../img/input-left.png" class="left" bindtap='getList'></image>
+    <input
+    bindconfirm="getList"
+    bindinput='getkey'
+    placeholder='请输入关键词' 
+    value="{{str}}"
+    class="TextInput" 
+    focus='true'/>
+    <image src="../img/input-right.png" class="right" bindtap='clear'></image>
+</view>
+<button class="cu-btn bg-grey lg" id="returnArticle-Button" wx:if="{{num}}">共搜索到{{num}}篇文章</button>
+<view wx:for="{{list}}" class="articleList">
+  <view class="article">
+    <text class="article-title" 
+    data-lwid = "{{item.lwid}}"
+    data-title="{{item.lwTitle}}"
+    data-date="{{item.lwDate}}"
+    data-author="{{item.lwAuthor}}"
+    data-file="{{item.file}}"
+    data-lw-Content="{{item.lwContent}}"
+    data-net="{{item.net}}"
+    bindtap='getDetail'> {{item.lwTitle}}</text>
+    <image style="width:50rpx;height:50rpx;"
+src="{{item.iscollect?collectionSelected:collection}}"
+bindtap="ToColletcion"
+data-mark="{{item.iscollect}}"
+data-lwid = "{{item.lwid}}"
+data-title="{{item.lwTitle}}"
+data-date="{{item.lwDate}}"
+data-author="{{item.lwAuthor}}"
+data-file="{{item.file}}"
+data-net="{{item.net}}"
+data-index="{{index}}"></image>
+    <text class="article-head"
+    data-lwid = "{{item.lwid}}"
+    data-title="{{item.lwTitle}}"
+    data-date="{{item.lwDate}}"
+    data-author="{{item.lwAuthor}}"
+    data-file="{{item.file}}"
+    data-lw-Content="{{item.lwContent}}"
+    data-net="{{item.net}}"
+    bindtap='getDetail'>{{item.lwContent}}</text>
+    <text class="article-time">日期：{{item.lwDate}}</text>
+    <text class="artice-author">作者：{{item.lwAuthor}}</text>
+  </view>
+</view>

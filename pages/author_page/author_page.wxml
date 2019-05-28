@@ -1,0 +1,71 @@
+<!--pages/author_page/author_page.wxml-->
+<view class='team_pic'><image class='top_pic' src='/pages/img/team.png'/></view>
+<view class='contain'>
+
+  <view class='card'>
+    <view class='name_num'>
+      <p><image class='pic' src='/pages/img/people.png'></image>
+      <text class='name'>蔡文豪</text></p>
+      <p><text class='num'>1609081602618</text></p>
+    </view>
+    <view class='introduction'>
+      <p>制定项目计划,负责团队建设,合理分工;撰写项目申报书、项目计划书等          产品,完成任务审批</p>
+    </view>
+  </view>
+
+  <view class='card'>
+    <view class='name_num'>
+      <p><image class='pic' src='/pages/img/people.png'></image>
+      <text class='name'>柯浩鹏</text></p>
+      <p><text class='num'>1609081602308</text></p>
+    </view>
+    <view class='introduction'>
+      <p>负责小程序的模块化设计和功能开发，并协作搭建后台及数据库；根据后期反馈数据修改模块功能,进行产品升级和维护。</p>
+    </view>
+  </view>
+
+  <view class='card'>
+    <view class='name_num'>
+      <p><image class='pic' src='/pages/img/people.png'></image>
+      <text class='name'>许佳鸿</text></p>
+      <p><text class='num'>1614080902342</text></p>
+    </view>
+    <view class='introduction'>
+      <p>负责小程序的模块化设计和功能开发，并协作搭建后台及数据库；据测试专员的测试结果修改BUG,并进行最优化调整</p>
+    </view>
+  </view>
+
+  <view class='card'>
+    <view class='name_num'>
+      <p><image class='pic' src='/pages/img/people.png'></image>
+      <text class='name'>李泽钜</text></p>
+      <p><text class='num'>1612070501311</text></p>
+    </view>
+    <view class='introduction'>
+      <p>对各版本软件进行测试,记录和描述问题现象，分析BUG 源,撰写测试计划书和报告书。</p>
+    </view>
+  </view>
+
+  <view class='card'>
+    <view class='name_num'>
+      <p><image class='pic' src='/pages/img/people.png'></image>
+      <text class='name'>黄李富</text></p>
+      <p><text class='num'>1614080902323</text></p>
+    </view>
+    <view class='introduction'>
+      <p>进行产品架构设计,负责客户端和用户界面的设计、修改、设计优化,产品的形象定位和宣传广告设计,配合程序员完成界面代码化。</p>
+    </view>
+  </view>
+
+  <view class='card'>
+    <view class='name_num'>
+      <p><image class='pic' src='/pages/img/people.png'></image>
+      <text class='name'>林东鑫</text></p>
+      <p><text class='num'>1612070501328</text></p>
+    </view>
+    <view class='introduction'>
+      <p>进行市场调查,确定软件功能，制定可行性报告。进行前期用户调查与分析及后期用户活跃度、软件下载量等进行数据分析</p>
+    </view>
+  </view>
+
+</view>

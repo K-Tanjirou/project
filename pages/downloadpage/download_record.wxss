@@ -1,0 +1,46 @@
+/* pages/downloadpage/download_record.wxss */
+.data{
+  margin: 15rpx;
+  color: rgba(15, 1, 41, 0.507);
+}
+
+.main{
+  margin-top: 13rpx;
+}
+
+.container{
+  border: 1px rgba(0, 0, 0, 0.507) solid;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.time{
+  font-size: 27rpx;
+  margin-left: 15rpx;
+  color: rgba(102, 107, 83, 0.733)
+}
+
+.title{
+  font-size: 30rpx;
+  margin-left: 40rpx;
+}
+
+.del-img{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.button_style{
+  position: fixed;
+  margin-top: 50rpx;
+  width: 100%
+}
+
+.spe_date{
+  margin: 20rpx;
+  font-size: 30rpx;
+  color: rgba(52, 7, 110, 0.911)
+}

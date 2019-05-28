@@ -1,0 +1,13 @@
+<!--首页-->
+<view class="search">
+  <text class="Text">— 论文搜索 —</text>
+  <view class="inputItem">
+    <image src="../img/input-left.png" class="left"></image>
+    <input bindtap="jump2search"
+     placeholder='请输入关键词' 
+     class="TextInput" />
+     <image src="../img/input-right.png" class="right"></image>
+  </view>
+</view>
+
+
